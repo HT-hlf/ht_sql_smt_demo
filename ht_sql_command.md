@@ -283,7 +283,9 @@ SELECT Sno,COUNT(*) FROM SC WHERE Grade>=80 GROUP BY Sno;
 - 
 
 ```
-
+CREATE VIEW s_cs(cs_Sno ,cs_Name,cs_Birth)
+as Select Sno,Sname,Sbirth
+From Student Where Sdept='CS'
 ```
 
 - 

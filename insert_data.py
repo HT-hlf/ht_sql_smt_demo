@@ -1,7 +1,7 @@
 # coding:utf-8
 # @Author     : HT
 # @Time       : 2022/12/1 16:24
-# @File       : insert_data.py
+# @File       : INSERT_data.py
 # @Software   : PyCharm
 
 #导入模块
@@ -22,7 +22,7 @@ cur=con.cursor()
 # Staff (Staff_Number, Staff_Name, Staff_Sex, Staff_Birth, Staff_Work_Type )
 # Repair_Order (Repair_Order_Number, Repair_Start_Time, Repair_End_Time, Staff_Number, U_Line_Number )
 #生产线
-sql='insert into SMT_U_Line (U_Line_Number, U_Line_Operation_Status ) values(%s,%s)'
+sql='INSERT into SMT_U_Line (U_Line_Number, U_Line_Operation_Status ) values(%s,%s)'
 SMT_list=[]
 smt_status=['生产','生产','生产','生产','生产','故障']
 SMT_U_Line_NUM=99
@@ -45,7 +45,7 @@ except Exception as e:
 # Staff (Staff_Number, Staff_Name, Staff_Sex, Staff_Birth, Staff_Work_Type )
 sex=['男','男','女']
 Staff_Work_Type=['维修','生产']
-sql='insert into Staff (Staff_Number, Staff_Name, Staff_Sex, Staff_Birth, Staff_Work_Type ) values(%s,%s,%s,%s,%s)'
+sql='INSERT into Staff (Staff_Number, Staff_Name, Staff_Sex, Staff_Birth, Staff_Work_Type ) values(%s,%s,%s,%s,%s)'
 Staff_NUM=SMT_U_Line_NUM+10
 Staff_num_List=[str(i).zfill(6) for i in range(Staff_NUM)]
 staff_birth_list=gen_time((1980,8,6,8,14,59), (2001,12,6,9,0,0),Staff_NUM)
@@ -78,7 +78,7 @@ except Exception as e:
 A_Z='QWERTYUIOPASDFGHJKLZXCVBNM'
 PCB_name_list=['PCB_A'+A_Z[i] for i in range(26)]
 
-sql='insert into Mainboard (Mainboard_Number, Mainboard_Cost, Mainboard_Sale_Price ) values(%s,%s,%s)'
+sql='INSERT into Mainboard (Mainboard_Number, Mainboard_Cost, Mainboard_Sale_Price ) values(%s,%s,%s)'
 
 Mainboard_list=[]
 
@@ -99,7 +99,7 @@ except Exception as e:
     print('插入失败')
 
 #派工单
-sql='insert into Dispatch_Order (Dispatch_Order_Number, ' \
+sql='INSERT into Dispatch_Order (Dispatch_Order_Number, ' \
     'Work_Plan_Start_Time, ' \
     'Work_Plan_End_Time, ' \
     'Work_Real_Start_Time, ' \
@@ -180,7 +180,7 @@ except Exception as e:
 
 #维修单
 # Repair_Order (Repair_Order_Number, Repair_Start_Time, Repair_End_Time, Staff_Number, U_Line_Number )
-sql='insert into Repair_Order (Repair_Order_Number, ' \
+sql='INSERT into Repair_Order (Repair_Order_Number, ' \
     'Repair_Start_Time, ' \
     'Repair_End_Time,' \
     ' Staff_Number,' \

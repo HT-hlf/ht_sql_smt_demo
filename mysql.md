@@ -246,7 +246,7 @@ GROUP BY SMT_U_Line.U_Line_Number HAVING SUM(Work_Real_Qualified_Number)/SUM(Wor
 ```
 
 ```mysql
-
+mysqldump -h localhost -u root -p database_smt > Z:\doing\数据库系统\ht_sql\database\database_smt.sql
 ```
 
 ```mysql
